@@ -1,4 +1,6 @@
-import { IconSoup } from '@tabler/icons-react';
+import {
+    IconTimeline,
+ } from '@tabler/icons-react';
 import DigitalClock from './DigitalClock';
 
 function Header({ clickHandler = (menuItem) => { } }) {
@@ -6,7 +8,7 @@ function Header({ clickHandler = (menuItem) => { } }) {
         <>
             <nav className="navbar is-fixed-top" role="navigation" aria-label="main navigation">
                 <div className="navbar-brand">
-                    <a href="/" className="navbar-item"><IconSoup /></a>
+                    <a href="/" className="navbar-item"><IconTimeline /></a>
                 </div>
                 <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarTopMenu">
                     <span aria-hidden="true"></span>
