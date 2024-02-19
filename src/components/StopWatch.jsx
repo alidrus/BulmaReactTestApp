@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useRef} from 'react'
-import { padZero } from '../utilities';
+import { formatElapsedTime } from '../utilities';
 import {
     IconPlayerPlay,
     IconPlayerStop,
@@ -37,8 +37,7 @@ function StopWatch() {
     };
 
     const lap = () => {
-        const lapTime = Date.now();
-        lapTimesRef.current.push(lapTime);
+        lapTimesRef.current.unshift(elapsedTime);
     };
 
     const reset = () => {
@@ -50,21 +49,12 @@ function StopWatch() {
         lapTimesRef.current.length = 0;
     };
 
-    const formatTime = () => {
-        const hours = Math.floor(elapsedTime / (1000 * 60 * 60)),
-            minutes = Math.floor(elapsedTime / (1000 * 60) % 60),
-            seconds = Math.floor(elapsedTime / 1000 % 60),
-            milliseconds = Math.floor((elapsedTime % 1000) / 10);
-
-        return `${padZero(hours)}:${padZero(minutes)}:${padZero(seconds)}:${padZero(milliseconds)}`;
-    };
-
     return (
         <div className='content'>
             <div className='stopwatch-parent'>
                 <div className="stopwatch">
                     <div className="display">
-                        {formatTime()}
+                        {formatElapsedTime(elapsedTime)}
                     </div>
                     <div className="controls">
                         {
@@ -107,13 +97,16 @@ function StopWatch() {
                     {
                         lapTimesRef.current.length > 0 &&
                         <div className="lap-times">
-                            <h4 className="title is-4">Lap Times</h4>
-                                {
-                                    lapTimesRef.current.map(
-                                        (lapTime, index) =>
-                                        <p key={index}>{ formatTime(lapTime) }</p>
-                                        )
-                                }
+                            <h4 className="title is-4 mt-6">Lap Times</h4>
+                            {
+                                lapTimesRef.current.map(
+                                    (lapTime, index) =>
+                                        <div className='columns'>
+                                            <div className='column is-narrow' key={index}>{lapTimesRef.current.length - index}</div>
+                                            <div className='column is-narrow' key={index}>{formatElapsedTime(lapTime)}</div>
+                                        </div>
+                                )
+                            }
                         </div>
                     }
                 </div>
