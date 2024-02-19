@@ -1,4 +1,5 @@
 import { IconSoup } from '@tabler/icons-react';
+import DigitalClock from './DigitalClock';
 
 function Header() {
     return(
@@ -14,10 +15,13 @@ function Header() {
                 </a>
                 <div className="navbar-menu">
                     <div className="navbar-start">
-                        <a href="#" className="navbar-item">Home</a>
-                        <a href="#" className="navbar-item">About</a>
-                        <a href="#" className="navbar-item">Services</a>
-                        <a href="#" className="navbar-item">Contact</a>
+                        <a className="navbar-item">Home</a>
+                        <a className="navbar-item">About</a>
+                        <a className="navbar-item">Services</a>
+                        <a className="navbar-item">Contact</a>
+                    </div>
+                    <div className="navbar-end">
+                        <a className="navbar-item"><DigitalClock /></a>
                     </div>
                 </div>
             </nav>
