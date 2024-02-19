@@ -1,8 +1,8 @@
 import { IconSoup } from '@tabler/icons-react';
 import DigitalClock from './DigitalClock';
 
-function Header({ clickHandler = (menuItem) => {} }) {
-    return(
+function Header({ clickHandler = (menuItem) => { } }) {
+    return (
         <>
             <nav className="navbar is-fixed-top" role="navigation" aria-label="main navigation">
                 <div className="navbar-brand">
