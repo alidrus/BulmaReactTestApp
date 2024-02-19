@@ -101,9 +101,9 @@ function StopWatch() {
                             {
                                 lapTimesRef.current.map(
                                     (lapTime, index) =>
-                                        <div className='columns'>
-                                            <div className='column is-narrow' key={index}>{lapTimesRef.current.length - index}</div>
-                                            <div className='column is-narrow' key={index}>{formatElapsedTime(lapTime)}</div>
+                                        <div className='columns' key={index}>
+                                            <div className='column is-narrow'>{lapTimesRef.current.length - index}</div>
+                                            <div className='column is-narrow'>{formatElapsedTime(lapTime)}</div>
                                         </div>
                                 )
                             }
