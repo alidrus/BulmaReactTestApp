@@ -1,7 +1,7 @@
 import { IconSoup } from '@tabler/icons-react';
 import DigitalClock from './DigitalClock';
 
-function Header() {
+function Header(props) {
     return(
         <>
             <nav className="navbar is-fixed-top" role="navigation" aria-label="main navigation">
@@ -15,10 +15,8 @@ function Header() {
                 </a>
                 <div className="navbar-menu">
                     <div className="navbar-start">
-                        <a className="navbar-item">Home</a>
-                        <a className="navbar-item">About</a>
-                        <a className="navbar-item">Services</a>
-                        <a className="navbar-item">Contact</a>
+                        <a onClick={() => props.clickHandler('food-list')} className="navbar-item">Food List</a>
+                        <a onClick={() => props.clickHandler('stopwatch')} className="navbar-item">Stopwatch</a>
                     </div>
                     <div className="navbar-end">
                         <a className="navbar-item"><DigitalClock /></a>
