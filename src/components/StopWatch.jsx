@@ -1,11 +1,11 @@
-import React, {useState, useEffect, useRef} from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { formatElapsedTime } from '../utilities';
 import {
     IconPlayerPlay,
     IconPlayerStop,
     IconReload,
     IconRun,
- } from '@tabler/icons-react';
+} from '@tabler/icons-react';
 
 function StopWatch() {
     const [isRunning, setIsRunning] = useState(false);
