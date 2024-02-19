@@ -9,7 +9,7 @@ function App() {
       <Food></Food>
       <Footer></Footer>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
