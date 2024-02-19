@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { padZero } from '../utilities';
 
 const DigitalClock = () => {
     const [time, setTime] = useState(new Date());
@@ -12,10 +13,6 @@ const DigitalClock = () => {
             clearInterval(intervalId);
         };
     }, []);
-
-    const padZero = (number) => {
-        return number.toString(10).padStart(2, '0');
-    };
 
     const formatTime = () => {
         const hours = time.getHours(),
